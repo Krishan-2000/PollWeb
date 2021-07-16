@@ -5,7 +5,7 @@ export const InputContext = createContext();
 
 export const InputProvider = (props) =>{
 
-    const [inputfield, setInputfield] = useState([{id : 1, text : ""}, {id : 2, text: ""}]);
+    const [inputfield, setInputfield] = useState([{text : "" , id: Math.random()}, {text: "", id: Math.random()}]);
 
     return (
        <InputContext.Provider value={[inputfield,setInputfield]}>{props.children}</InputContext.Provider>
