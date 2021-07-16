@@ -1,6 +1,27 @@
 .InputOption input{
     border: 1px solid #BDC7C8;
-    width: 90%;
+    width: 92%;
     height: 80px;
     border-radius: 10px;
+}
+.DeleteButton
+{
+    font-size: 1.9rem;
+    /* margin-left: 2%; */
+    position: relative;
+    left: 12px;
+    color: blue;
+}
+.fa-trash-o:hover{
+    color: red;
+    cursor: pointer;
+}
+@media(max-width : 550px)
+{
+    .InputOption input{
+        border: 1px solid #BDC7C8;
+        width: 80%;
+        height: 80px;
+        border-radius: 10px;
+    }
 }

@@ -45,15 +45,16 @@ const Body = () => {
 
     return (
         <div className="Body">
-            <div>
-                <h2>Create Poll</h2>
-                <p>Complete Below Field to create a Poll</p>
-                <p>Poll Question</p>
+            <div className="BodyInnerDiv">
+                <h2 className="Heading">Create Poll</h2>
+                <p className="para">Complete Below Field to create a Poll</p>
+                <br/>
+                <p className="para1">Poll Question</p>
                 <form >
                     <InputQuestion onChange={onChangeHandler} />
                     {inputfield.map((val, index) => (
                         <>
-                            <h2 key={Date.now()}>Option {index}</h2>
+                            <h2 key={Date.now()} className="OptionHeading">Option {index+1}</h2>
                             <InputOption key={index} value={val.text} id={index} onChange={onChangeHandlerOption} onDelete={DeleteitemHandler} />
                         </>
                     ))}

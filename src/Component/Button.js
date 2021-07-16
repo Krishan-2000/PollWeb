@@ -1,10 +1,11 @@
 import React from 'react'
+import './Body.css'
 
 
 const Button = (props) =>{
 
    return (
-        <button onClick={props.onClick}>{props.children}</button>
+        <button className={props.className} onClick={props.onClick}>{props.children}</button>
     )
 };
 
