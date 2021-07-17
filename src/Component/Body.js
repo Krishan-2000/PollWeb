@@ -13,14 +13,32 @@ const Body = () => {
     const onsubmithandler = (event) => {
         event.preventDefault();
         setInputfield(() => {
-            return [...inputfield, { text: "", id: Math.random() }];
+            return [...inputfield, { text: "", vote : 0}];
         })
     }
 
-    const onsubmitdatahandler = (event) => {
+    const onsubmitdatahandler = async(event) => {
         event.preventDefault();
-        console.log(inputfield);
-        console.log(inputquestion);
+        // const obj={inputquestion, inputfield}
+
+        const res= await fetch("/api/poll/createpoll",{
+            method: "POST",
+            headers:{
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify({question:inputquestion, option:inputfield})
+        });
+
+        const data=await res.json();
+        console.log(data);
+        if(res.status===400 || !data)
+        {
+            window.alert("Something Went Wrong");
+        }
+        else
+        {
+            window.alert("Poll Created");
+        }
     }
 
     const onChangeHandler = (val) => {
