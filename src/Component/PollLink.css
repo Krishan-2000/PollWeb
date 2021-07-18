@@ -1,0 +1,70 @@
+.mainDiv
+{
+    border:  2px solid #DFEBFF;
+    background-color: #DFEBFF;
+    padding-left: 10%;
+    padding-right: 10%;
+    /* height: 100px; */
+}
+
+.childdiv
+{
+    border: 2px solid #F3F8FF;
+    margin-top:10%;
+    margin-bottom: 5%;
+    background-color: #F3F8FF;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 5px;
+    padding-bottom: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.LinkUser
+{
+    /* border: 2px solid green; */
+    margin-top: 5%;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+.textareaLink
+{
+    width: 80%;
+    height: 30px;
+    position: relative;
+    top: -7px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #C7CFD9;
+    padding-left: 2%;
+    position: relative;
+    padding-top: 2%;
+    font-size: 1.2rem;
+}
+
+.copybutton{
+    font-size: 40px;
+    position: relative;
+    top: -15px;
+    margin-left: 0.2%;
+    color: #3A608F;
+}
+.copybutton:hover{
+    cursor: pointer;
+}
+.h3userLink{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+}
+
+.LinkadminUser
+{
+    /* border: 2px solid red; */
+    margin-top: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+.h3adminLink
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+}

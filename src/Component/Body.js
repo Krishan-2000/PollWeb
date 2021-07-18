@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react'
+import { useHistory } from "react-router-dom";
 import './Body.css'
 import InputQuestion from './InputQuestion'
 import InputOption from './InputOption'
 import Button from './Button'
 import { InputContext } from './ContextApi/InputContext'
+// import PollLink from './PollLink'
 
-const Body = () => {
-
+const Body = (props) => {
+     const history = useHistory();
     const [inputfield, setInputfield] = useContext(InputContext);
     const [inputquestion, setquestion] = useState("");
 
@@ -16,6 +18,7 @@ const Body = () => {
             return [...inputfield, { text: "", vote : 0}];
         })
     }
+
 
     const onsubmitdatahandler = async(event) => {
         event.preventDefault();
@@ -30,7 +33,6 @@ const Body = () => {
         });
 
         const data=await res.json();
-        console.log(data);
         if(res.status===400 || !data)
         {
             window.alert("Something Went Wrong");
@@ -38,6 +40,10 @@ const Body = () => {
         else
         {
             window.alert("Poll Created");
+            props.GetData(data._id);
+            // console.log(data);
+            console.log(data._id);
+            history.push('/pollLink');
         }
     }
 
@@ -77,7 +83,7 @@ const Body = () => {
                         </>
                     ))}
                     <Button className="AddOptionButton" onClick={onsubmithandler}>Add Option</Button>
-                    <Button className="GeneratePollButton" onClick={onsubmitdatahandler}>Create Your Poll</Button>
+                 <Button className="GeneratePollButton" onClick={onsubmitdatahandler}>Create Your Poll</Button>
                 </form>
             </div>
         </div>
