@@ -1,0 +1,113 @@
+.polldata
+{   
+     background-color: #DFEBFF;
+    margin-top: 3%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.pollquestion
+{
+   margin-left: 15%;
+   margin-top: 3%;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 30px;
+   font-weight: 700;
+}
+.polloption{
+    /* border: 2px solid red; */
+    margin-left: 16%;
+    margin-right: 20%;
+    margin-top: 3%;
+}
+.polloptiondata {
+    transform: perspective(1px) translateZ(0);
+    /* box-shadow: 0 0 1px rgba(0, 0, 0, 0); */
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+  .polloptiondata:hover, .polloptiondata:focus, .polloptiondata:active {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.97);
+  }
+
+.polloptiondata{
+  background-color: #FBFCFE;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 90px;
+  width: 100%;
+  border-radius: 7px;
+}
+
+
+
+.polloptiondata p{
+    color: #797E88;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-top: 3%;
+    padding-left: 2%;
+}
+
+
+.GeneratePollButton1
+  {
+    margin-top: 5%;
+    margin-left: 15.7%;
+    margin-bottom: 5%;
+    width: 280px;
+    box-sizing: border-box;
+  -webkit-appearance: none;
+    -moz-appearance: none;
+     appearance: none;
+    background-color: #125F27;
+    border: 2px solid #e74c3c;
+   border-radius: 0.6em;
+   color: #e74c3c;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: flex; */
+  -webkit-align-self: center;
+   -ms-flex-item-align: center;
+    align-self: center;
+  font-size: 0.889rem;
+  font-weight: 400;
+  line-height: 2.8;
+    /* margin: 20px; */
+    padding: 1.2em 4.54em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    border-color: #4DE20F;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #4DE20F inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+      transition: all 150ms ease-in-out;
+  }
+
+  .GeneratePollButton1:hover
+  {
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+  }
+
+  @media(max-width: 800px)
+  {
+      .GeneratePollButton1
+      {
+         margin-left: 0%;
+      }
+  }
+  @media(max-width: 400px)
+  {
+      .GeneratePollButton1
+      {
+          width: 220px;
+          font-size: 11px;
+      }
+  }

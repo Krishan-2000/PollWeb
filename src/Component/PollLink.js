@@ -4,7 +4,7 @@ import './PollLink.css'
 
 const PollLink = (props) => {
 
-  const [copyText, setcopyText] = useState(`http://localhost:3000/pollLink/${props.value}`);
+  const [copyText, setcopyText] = useState(`http://localhost:3000/poll/${props.value}`);
 
   const handlecopyText = (e) => {
   
