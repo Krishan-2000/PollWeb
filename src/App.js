@@ -8,7 +8,7 @@ import { InputProvider } from './Component/ContextApi/InputContext';
 import { Route } from 'react-router-dom';
 import { useState } from 'react';
 import { OptionPollContext, OptionPollContextProvider } from './Component/ContextApi/OptionPollContext';
-
+import ResultPage from './Component/ResultPage';
 
 function App() {
 
@@ -35,6 +35,11 @@ function App() {
             <Navbar />
             <Header />
             <Poll />
+          </Route>
+          <Route exact path="/poll/result/:_id">
+            <Navbar />
+            <Header />
+            <ResultPage />
           </Route>
         </OptionPollContextProvider>
       </InputProvider>

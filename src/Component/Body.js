@@ -79,7 +79,7 @@ const Body = (props) => {
                     {inputfield.map((val, index) => (
                         <>
                             <h2 key={Date.now()} className="OptionHeading">Option {index+1}</h2>
-                            <InputOption key={index} value={val.text} id={index} onChange={onChangeHandlerOption} onDelete={DeleteitemHandler} />
+                            <InputOption key={index} arr={inputfield} value={val.text} id={index} onChange={onChangeHandlerOption} onDelete={DeleteitemHandler} />
                         </>
                     ))}
                     <Button className="AddOptionButton" onClick={onsubmithandler}>Add Option</Button>

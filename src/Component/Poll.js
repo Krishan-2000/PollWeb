@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import Option from './Option'
 import Button from './Button'
 // import './Body.css'
@@ -8,6 +8,7 @@ import { OptionPollContext } from './ContextApi/OptionPollContext'
 const Poll = () =>{
 
    const params = useParams();
+   const history = useHistory();
    const[dataoption,setdataoption]=useState({});
    const[array,setarray]=useState([]);
    const [ans,setans]=useContext(OptionPollContext);
@@ -35,12 +36,37 @@ const Poll = () =>{
      }
   }
 
+  const updatevoted = async ()=>{
+    try{
+      const request={
+        method: "PUT",
+        headers:{"Content-Type": "application/json"},
+      }
+      const response= await fetch(`/api/poll/update_vote/${params._id}/${ans}`,request);
+      const data= await response.json();
+      console.log(data);
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+  }
+
   const optionSubmitHandler = () =>{
+      updatevoted();
       localStorage.setItem(params._id,ans);
+      history.push(`/poll/result/${params._id}`);
   }
 
     useEffect(()=>{
-       callOptionPage();
+       if(localStorage.getItem(params._id)!==null) 
+       {
+         history.push(`/poll/result/${params._id}`);
+       }
+       else
+       {
+        callOptionPage();
+       }
     },[]);
     return(
       <div className="polldata">
