@@ -7,6 +7,7 @@ const ResultOption = (props) => {
             <div className="polloptiondata1" >
                 <p>{props.value.text}</p>
                 <p className="vote">{`Vote ${props.value.vote}`}</p>
+                <h6 className="votepercent">{`${((props.value.vote)/((props.total))*100)}%`}</h6> 
             </div>
         </div>
     )

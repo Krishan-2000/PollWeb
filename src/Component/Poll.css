@@ -40,6 +40,14 @@
   border-radius: 7px;
 }
 
+.polloptiondata1
+{ 
+  background-color: #FBFCFE;
+  box-shadow: 0 4px 8px 0  #24E843, 0 6px 20px 0 #8CFF9E;
+  height: 90px;
+  width: 100%;
+  border-radius: 7px;
+}
 
 .polloptiondata p{
     color: #797E88;

@@ -115,14 +115,14 @@ Body .OptionHeading
 
     border-color: #4DE20F;
     color: #fff;
-    box-shadow: 0 0 40px 40px #4DE20F inset, 0 0 0 0 #3498db;
+    box-shadow: 0 0 40px 40px #4DE20F inset, 0 0 0 0 #4DE20F;
     -webkit-transition: all 150ms ease-in-out;
       transition: all 150ms ease-in-out;
   }
 
   .GeneratePollButton:hover
   {
-    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+    box-shadow: 0 0 10px 0 #4DE20F inset, 0 0 10px 4px #4DE20F;
   }
 
   @media(max-width: 800px)

@@ -6,23 +6,20 @@ import { OptionPollContext } from './ContextApi/OptionPollContext';
 const Option = (props) => {
 
     const [ans, setans] = useContext(OptionPollContext);
+    const[clickid,setclickid]=useState('');
     const params = useParams();
-    console.log(params._id);
+    // console.log(params._id);
     const divref = useRef();
     const clickOption = () => {
         divref.current.style.boxShadow = "0 4px 8px 0  #24E843, 0 6px 20px 0 #8CFF9E";
         console.log(divref.current.attributes.d.value);
+        console.log(divref);
         setans(divref.current.attributes.d.value);
+        setclickid(divref.current.attributes.d.value);
     }
-
-    const toggle= () =>{
-        let colorchange= document.getElementById(`option-id${props.value._id}`);
-        colorchange.classList.toggle('active');
-    }
-
     return (
         <div className="polloption"  >
-            <div ref={divref} onClick={clickOption,toggle} id={`option-id${props.value._id}`} d={props.value._id} className="polloptiondata" >
+            <div ref={divref} onClick={clickOption} id={`option-id${props.value._id}`} d={props.value._id} className="polloptiondata">
                 <p onClick={clickOption}>{props.value.text}</p>
             </div>
         </div>

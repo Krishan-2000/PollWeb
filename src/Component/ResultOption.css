@@ -52,6 +52,15 @@
     font-size: 18px !important;
 }
 
+.votepercent
+{
+    font-family: 'Roboto';
+    color:#30E84D;
+    margin-left: 80%;
+    font-size: 25px;
+    margin-top: -19%;
+}
+
 @media(max-width:800px){
     .polloption1{
         /* border: 2px solid green; */
@@ -70,6 +79,39 @@
         font-family: Arial, Helvetica, sans-serif !important;
         font-size: 18px !important;
     }
-    
-
+}
+@media(min-width:1400px){
+    .votepercent{
+        margin-left: 85%;
+        font-size: 30px;
+        margin-top: -15%;
+    }
+}
+@media(max-width:600px){
+    .votepercent{
+        margin-left: 82%;
+        font-size: 30px;
+        margin-top: -20%;
+    }
+}
+@media(max-width:500px){
+    .votepercent{
+        margin-left: 77%;
+        font-size: 30px;
+        margin-top: -25%;
+    }
+}
+@media(max-width:400px){
+    .votepercent{
+        margin-left: 70%;
+        font-size: 30px;
+        margin-top: -29%;
+    }
+}
+@media(max-width:300px){
+    .votepercent{
+        margin-left: 70%;
+        font-size: 25px;
+        margin-top: -39%;
+    }
 }

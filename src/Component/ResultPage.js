@@ -10,7 +10,8 @@ const ResultPage = () => {
   const params = useParams();
   const [dataoption, setdataoption] = useState('');
   const [array, setarray] = useState([]);
-
+  // const [sum,setsum]=useState(parseInt(0));
+  let totals=parseInt(0);
   const callResultPage = async () => {
 
     try {
@@ -31,18 +32,22 @@ const ResultPage = () => {
       }
     }
     catch (err) {
-      console.log("hi");
       console.log(err);
     }
 
   }
+  for(let i=0; i<array.length; i++)
+  {
+      totals+=parseInt(array[i].vote);
+  }
+  // console.log(sum);
 
   useEffect(() => {
     callResultPage();
     toast.success("Thanks For Your Vote", {
     });
   }, []);
-  console.log(array);
+  // console.log(array);
   return (
     <div>
       <div className="polldata1">
@@ -50,7 +55,7 @@ const ResultPage = () => {
 
         {
           array.map((value) => {
-            return (<ResultOption key={value._id} value={value} />);
+            return (<ResultOption key={value._id} total={totals} value={value} />);
           })
         }
 
