@@ -1,6 +1,6 @@
 .header{
     text-align: center;
-    /* background-color: #E2EAEE; */
+    text-transform: uppercase;
     padding-top: 5%;
     padding-bottom: 5%;
 }
@@ -9,5 +9,6 @@
     color: #102743;
 }
 .header h5{
+    text-transform: uppercase;
     color: #3D5042;
 }

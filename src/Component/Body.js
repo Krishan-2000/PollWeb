@@ -5,43 +5,42 @@ import InputQuestion from './InputQuestion'
 import InputOption from './InputOption'
 import Button from './Button'
 import { InputContext } from './ContextApi/InputContext'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import PollLink from './PollLink'
 
 const Body = (props) => {
-     const history = useHistory();
+    const history = useHistory();
     const [inputfield, setInputfield] = useContext(InputContext);
     const [inputquestion, setquestion] = useState("");
 
     const onsubmithandler = (event) => {
         event.preventDefault();
         setInputfield(() => {
-            return [...inputfield, { text: "", vote : 0}];
+            return [...inputfield, { text: "", vote: 0 }];
         })
     }
 
 
-    const onsubmitdatahandler = async(event) => {
+    const onsubmitdatahandler = async (event) => {
         event.preventDefault();
         // const obj={inputquestion, inputfield}
 
-        const res= await fetch("/api/poll/createpoll",{
+        const res = await fetch("/api/poll/createpoll", {
             method: "POST",
-            headers:{
-                "Content-Type" : "application/json"
+            headers: {
+                "Content-Type": "application/json"
             },
-            body : JSON.stringify({question:inputquestion, option:inputfield})
+            body: JSON.stringify({ question: inputquestion, option: inputfield })
         });
 
-        const data=await res.json();
-        if(res.status===400 || !data)
-        {
-            window.alert("Something Went Wrong");
+        const data = await res.json();
+        if (res.status === 400 || !data) {
+
         }
-        else
-        {
-            window.alert("Poll Created");
+        else {
+            toast("Poll Created!");
             props.GetData(data._id);
-            // console.log(data);
             console.log(data._id);
             history.push('/pollLink');
         }
@@ -68,25 +67,29 @@ const Body = (props) => {
     }
 
     return (
+
+        <>
         <div className="Body">
             <div className="BodyInnerDiv">
                 <h2 className="Heading">Create Poll</h2>
                 <p className="para">Complete Below Field to create a Poll</p>
-                <br/>
+                <br />
                 <p className="para1">Poll Question</p>
                 <form >
                     <InputQuestion onChange={onChangeHandler} />
                     {inputfield.map((val, index) => (
                         <>
-                            <h2 key={Date.now()} className="OptionHeading">Option {index+1}</h2>
+                            <h2 key={Date.now()} className="OptionHeading">Option {index + 1}</h2>
                             <InputOption key={index} arr={inputfield} value={val.text} id={index} onChange={onChangeHandlerOption} onDelete={DeleteitemHandler} />
                         </>
                     ))}
                     <Button className="AddOptionButton" onClick={onsubmithandler}>Add Option</Button>
-                 <Button className="GeneratePollButton" onClick={onsubmitdatahandler}>Create Your Poll</Button>
+                    <Button className="GeneratePollButton" onClick={onsubmitdatahandler}>Create Your Poll</Button>
                 </form>
             </div>
+            <ToastContainer />
         </div>
+        </>
     )
 }
 

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ResultOption from './ResultOption'
 import './ResultOption.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ResultPage = () => {
 
@@ -37,20 +39,33 @@ const ResultPage = () => {
 
   useEffect(() => {
     callResultPage();
+    toast.success("Thanks For Your Vote", {
+    });
   }, []);
   console.log(array);
   return (
     <div>
       <div className="polldata1">
         <h3 className="pollquestion1">{dataoption.question}</h3>
-        
+
         {
           array.map((value) => {
-            return (<ResultOption key={value._id} value={value}/>);
+            return (<ResultOption key={value._id} value={value} />);
           })
         }
 
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   )
 }
