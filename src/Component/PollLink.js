@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const PollLink = (props) => {
 
   const [copyText, setcopyText] = useState(`http://localhost:3000/poll/${props.value}`);
+  const [copyadminText,setCopyadminText] = useState(`http://localhost:3000/poll/admin/${props.value}`)
 
   const handlecopyText = (e) => {
 
@@ -26,6 +27,15 @@ const PollLink = (props) => {
     
   }
 
+  const copyToClipboard1 = (e) => {
+    setCopyadminText(e.target.value);
+    copy(copyadminText);
+    console.log(copyText);
+    toast.success("Link Copied",{
+    });
+    
+  }
+
 
   return (
     <div className="mainDiv">
@@ -37,8 +47,8 @@ const PollLink = (props) => {
         </div>
         <div className="LinkadminUser">
           <h3 className="h3adminLink">The admin link to your poll is</h3>
-          <textarea className="textareaLink" type="text" onChange={handlecopyText} />
-          <i className="fa fa-clipboard copybutton" onClick={copyToClipboard} aria-hidden="true"></i>
+          <textarea className="textareaLink" type="text" onChange={handlecopyText} value={copyadminText} />
+          <i className="fa fa-clipboard copybutton" onClick={copyToClipboard1} aria-hidden="true"></i>
         </div>
       </div>
       <ToastContainer

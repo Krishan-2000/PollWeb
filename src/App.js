@@ -9,12 +9,22 @@ import { Route } from 'react-router-dom';
 import { useState } from 'react';
 import { OptionPollContext, OptionPollContextProvider } from './Component/ContextApi/OptionPollContext';
 import ResultPage from './Component/ResultPage';
+import AdminPage from './Component/AdminPage';
+import Error from './Component/Error';
+import {useParams} from 'react-router-dom';
+
 
 function App() {
 
   const [data, setdata] = useState('');
   const dataval = (val) => {
     setdata(val);
+  }
+  const [render,setrender]=useState(false);
+  const params= useParams();
+  if(localStorage.getItem(params._id))
+  {
+    setrender(true);
   }
   return (
 
@@ -34,12 +44,17 @@ function App() {
           <Route exact path="/poll/:_id">
             <Navbar />
             <Header />
-            <Poll />
+            {(render)?<Poll/>:<Error/>}
           </Route>
           <Route exact path="/poll/result/:_id">
             <Navbar />
             <Header />
-            <ResultPage />
+            {(render)?<ResultPage/>:<Error/>}
+          </Route>
+          <Route exact path="/poll/admin/:_id">
+            <Navbar />
+            <Header />
+            {(render)?<AdminPage/>:<Error/>}
           </Route>
         </OptionPollContextProvider>
       </InputProvider>

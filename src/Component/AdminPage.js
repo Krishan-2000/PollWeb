@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Error from './Error';
 
-const ResultPage = () => {
+const AdminPage = () => {
 
   const params = useParams();
   const [dataoption, setdataoption] = useState('');
@@ -44,11 +44,9 @@ const ResultPage = () => {
 
   useEffect(() => {
     callResultPage();
-    toast.success("Thanks For Your Vote", {
-    });
   }, []);
   // console.log(array);
-  return (<div className="databox">
+  return ((<div>
       <div className="polldata1">
         <h3 className="pollquestion1">{dataoption.question}</h3>
 
@@ -59,24 +57,8 @@ const ResultPage = () => {
         }
 
       </div>
-
-      {/* <div className="RightPart">
-        <div className></div>
-      </div> */}
-
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-    </div>
+    </div>)
   )
 }
 
-export default ResultPage
+export default AdminPage
