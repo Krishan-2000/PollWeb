@@ -23,7 +23,22 @@ const Body = (props) => {
 
     const onsubmitdatahandler = async (event) => {
         event.preventDefault();
+
+        if (inputquestion.trim().length === 0) {
+            toast.info("Question Field Required",{
+            });
+            
+            return;
+        }
         // const obj={inputquestion, inputfield}
+        for (let i = 0; i < inputfield.length; i++) {
+            if (inputfield[i].text.trim().length === 0) {
+                toast.info("Option Field Required",{
+                });
+                return;
+            }
+        }
+
 
         const res = await fetch("/api/poll/createpoll", {
             method: "POST",
@@ -68,26 +83,36 @@ const Body = (props) => {
     return (
 
         <>
-        <div className="Body">
-            <div className="BodyInnerDiv">
-                <h2 className="Heading">Create Poll</h2>
-                <p className="para">Complete Below Field to create a Poll</p>
-                <br />
-                <p className="para1">Poll Question</p>
-                <form >
-                    <InputQuestion onChange={onChangeHandler} />
-                    {inputfield.map((val, index) => (
-                        <>
-                            <h2 key={Date.now()} className="OptionHeading">Option {index + 1}</h2>
-                            <InputOption key={index} arr={inputfield} value={val.text} id={index} onChange={onChangeHandlerOption} onDelete={DeleteitemHandler} />
-                        </>
-                    ))}
-                    <Button className="AddOptionButton" onClick={onsubmithandler}>Add Option</Button>
-                    <Button className="GeneratePollButton" onClick={onsubmitdatahandler}>Create Your Poll</Button>
-                </form>
+            <div className="Body">
+                <div className="BodyInnerDiv">
+                    <h2 className="Heading">Create Poll</h2>
+                    <p className="para">Complete Below Field to create a Poll</p>
+                    <br />
+                    <p className="para1">Poll Question</p>
+                    <form >
+                        <InputQuestion onChange={onChangeHandler} />
+                        {inputfield.map((val, index) => (
+                            <>
+                                <h2 key={Date.now()} className="OptionHeading">Option {index + 1}</h2>
+                                <InputOption key={index} arr={inputfield} value={val.text} id={index} onChange={onChangeHandlerOption} onDelete={DeleteitemHandler} />
+                            </>
+                        ))}
+                        <Button className="AddOptionButton" onClick={onsubmithandler}>Add Option</Button>
+                        <Button className="GeneratePollButton" onClick={onsubmitdatahandler}>Create Your Poll</Button>
+                    </form>
+                </div>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
             </div>
-            <ToastContainer />
-        </div>
         </>
     )
 }

@@ -11,6 +11,7 @@ import { OptionPollContext, OptionPollContextProvider } from './Component/Contex
 import ResultPage from './Component/ResultPage';
 import AdminPage from './Component/AdminPage';
 import Error from './Component/Error';
+import Fotter from './Component/Fotter';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Navbar />
             <Header />
             <Body GetData={dataval} />
+            <Fotter/>
           </Route>
           <Route path="/pollLink">
             <Navbar />
@@ -45,16 +47,6 @@ function App() {
             <Header />
             <ResultPage/>
           </Route>
-          <Route exact path="/poll/admin/:_id">
-            <Navbar />
-            <Header />
-            <AdminPage/>
-          </Route>
-          {/* <Route exact path="/Error">
-            <Navbar />
-            <Header />
-            <Error/>
-          </Route> */}
         </OptionPollContextProvider>
       </InputProvider>
     </div>

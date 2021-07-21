@@ -15,6 +15,7 @@ const Poll = () => {
   const [dataoption, setdataoption] = useState({});
   const [array, setarray] = useState([]);
   const [ans, setans] = useContext(OptionPollContext);
+  const [clickid, setclickedid] = useState('');
 
   const callOptionPage = async () => {
     try {
@@ -60,6 +61,10 @@ const Poll = () => {
     history.push(`/poll/result/${params._id}`);
   }
 
+  const setclickid = (id)=>{
+     setclickedid(id);
+  }
+
   useEffect(() => {
     if (localStorage.getItem(params._id) !== null) {
       history.push(`/poll/result/${params._id}`);
@@ -73,7 +78,7 @@ const Poll = () => {
       <h3 className="pollquestion">{dataoption.question}</h3>
       {
         array.map((value) => {
-          return (<Option mainId={dataoption._id} value={value} key={value._id} />);
+          return (<Option mainId={dataoption._id} value={value} key={value._id} className={clickid==value._id?"polloptiondata2":"polloptiondata"}  onClick={setclickid}/>);
         })
       }
 

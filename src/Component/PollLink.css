@@ -4,7 +4,7 @@
     background-color: #DFEBFF;
     padding-left: 10%;
     padding-right: 10%;
-    /* height: 100px; */
+    height: 100%;
 }
 
 .childdiv
@@ -67,4 +67,42 @@
 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 200;
+}
+
+@media(max-width:700px)
+{
+    .textareaLink
+    {
+        font-size: 0.99rem;
+    } 
+    .copybutton
+    {
+        font-size: 35px;
+    }
+}
+
+@media(max-width:600px)
+{
+    .textareaLink
+    {
+        font-size: 0.9rem;
+    } 
+}
+@media(max-width:400px)
+{
+    .copybutton
+    {
+        font-size: 2rem;
+    } 
+}
+@media(max-width:370px)
+{
+    .copybutton
+    {
+        font-size: 1.6rem;
+    } 
+    .textareaLink
+    {
+        font-size: 0.8rem;
+    } 
 }
