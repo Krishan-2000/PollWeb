@@ -7,7 +7,6 @@ import Button from './Button'
 import { InputContext } from './ContextApi/InputContext'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import PollLink from './PollLink'
 
 const Body = (props) => {
     const history = useHistory();

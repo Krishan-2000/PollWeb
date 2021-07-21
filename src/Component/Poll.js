@@ -3,6 +3,8 @@ import { useHistory, useParams } from 'react-router-dom'
 import Option from './Option'
 import './Option.css'
 import Button from './Button'
+import Error from './Error'
+
 import './Poll.css'
 import { OptionPollContext } from './ContextApi/OptionPollContext'
 

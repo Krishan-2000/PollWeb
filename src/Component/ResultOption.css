@@ -1,15 +1,18 @@
 .polldata1
 {   
      background-color: #DFEBFF;
-    margin-top: 3%;
+     /* border: 2px solid black; */
+    /* margin-top: 3%; */
+    width: 52.3%;
     padding-top: 5%;
     padding-bottom: 5%;
-    padding-left: 3%;
+    /* padding-right: 10%; */
+    padding-left: 5%;
 }
 .pollquestion1
 {
   /* border: 2px solid rgb(56, 34, 34); */
-   margin-left: 5%;
+   /* margin-left: 5%; */
    margin-top: 1%;
    font-family: Arial, Helvetica, sans-serif;
    font-size: 30px;
@@ -18,9 +21,9 @@
 
 .polloption1{
     /* border: 2px solid green; */
-    margin-left: 5%;
+    /* margin-left: 5%; */
     /* margin-right: 20%; */
-    width: 50%;
+    width: 90%;
     margin-top: 3%;
 }
 
@@ -61,7 +64,75 @@
     margin-top: -19%;
 }
 
+@media(min-width:1400px)
+{
+    .polloption1{
+        /* border: 2px solid green; */
+    } 
+    .vote{
+        position: relative;
+        top: -30px;
+        left: 5px;
+        color: forestgreen !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 18px !important;
+    }
+    .votepercent{
+        margin-left: 85%;
+        font-size: 30px;
+        margin-top: -15%;
+    }
+
+}
+@media(min-width:1300px)
+{
+    .polloption1{
+        /* border: 2px solid green; */
+    } 
+    .vote{
+        position: relative;
+        top: -30px;
+        left: 5px;
+        color: forestgreen !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 18px !important;
+    }
+    .votepercent{
+        margin-left: 85%;
+        font-size: 30px;
+        margin-top: -15%;
+    }
+
+}
+
+@media(min-width:1200px)
+{
+    .polloption1{
+        /* border: 2px solid green; */
+    } 
+    .vote{
+        position: relative;
+        top: -30px;
+        left: 5px;
+        color: forestgreen !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 18px !important;
+    }
+    .votepercent{
+        margin-left: 85%;
+        font-size: 30px;
+        margin-top: -15%;
+    }
+
+}
+
 @media(max-width:800px){
+
+    .polldata1
+    {
+        width: 100%;
+    }
+
     .polloption1{
         /* border: 2px solid green; */
         margin-left: 5%;

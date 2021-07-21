@@ -5,13 +5,15 @@ import './ResultOption.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Error from './Error';
+import './ResultPage.css'
+import QRCode from "react-qr-code";
+
 
 const ResultPage = () => {
 
   const params = useParams();
   const [dataoption, setdataoption] = useState('');
   const [array, setarray] = useState([]);
-  // const [sum,setsum]=useState(parseInt(0));
   let totals=parseInt(0);
   const callResultPage = async () => {
 
@@ -37,11 +39,16 @@ const ResultPage = () => {
     }
 
   }
+  const mytext = localStorage.getItem(params._id);
+  let option="";
+  // const check=array.findIndex(x => x._id === mytext).text;
   for(let i=0; i<array.length; i++)
   {
       totals+=parseInt(array[i].vote);
+      if(array[i]._id===mytext){
+         option=array[i].text;
+      }
   }
-
   useEffect(() => {
     callResultPage();
     toast.success("Thanks For Your Vote", {
@@ -59,10 +66,11 @@ const ResultPage = () => {
         }
 
       </div>
-
-      {/* <div className="RightPart">
-        <div className></div>
-      </div> */}
+      
+      <div className="VoteText">
+        <h1 className="VoteTextHeading">{`You Voted: ${option}`}</h1>
+        <QRCode id="abc" value="123" className="QrCode"></QRCode>
+      </div>
 
       <ToastContainer
         position="top-right"

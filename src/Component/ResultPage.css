@@ -1,2 +1,54 @@
+.databox{
+    /* border:2px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.VoteText
+{
+    background-color: #DFEBFF;
+    /* border: 2px solid green; */
+    width: 35.7%;
+    /* margin-left: 5%; */
+    padding-left: 7%;
+}
 
+.VoteTextHeading
+{
+    margin-top: 15%;
+    /* text-align: center; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.QrCode
+{
+    margin-top: 5%;
+    /* padding-left: 40%; */
+}
+
+@media(max-width:800px)
+{
+    .VoteText
+    {
+        width: 100%;
+        padding-left: 30%;
+    }
+}
+@media(max-width:500px)
+{
+    .VoteText
+    {
+        width: 100%;
+        padding-left: 25%;
+    }
+}
+@media(max-width:400px)
+{
+    .VoteText
+    {
+        width: 100%;
+        padding-left: 10%;
+    }
+}
